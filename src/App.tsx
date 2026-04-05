@@ -1,28 +1,28 @@
-import { useEffect, useState } from 'react'
-import { SiteHeader } from './components/layout/SiteHeader'
-import { LoadingSkeleton } from './components/layout/LoadingSkeleton'
-import { AboutSection } from './components/sections/AboutSection'
-import { ContactSection } from './components/sections/ContactSection'
-import { HeroSection } from './components/sections/HeroSection'
-import { ProcessSection } from './components/sections/ProcessSection'
-import { ServicesSection } from './components/sections/ServicesSection'
-import { landingContent } from './data/landingContent'
+import { useEffect, useState } from "react";
+import { SiteHeader } from "./components/layout/SiteHeader";
+import { LoadingSkeleton } from "./components/layout/LoadingSkeleton";
+import { AboutSection } from "./components/sections/AboutSection";
+import { ContactSection } from "./components/sections/ContactSection";
+import { HeroSection } from "./components/sections/HeroSection";
+import { ProcessSection } from "./components/sections/ProcessSection";
+import { ServicesSection } from "./components/sections/ServicesSection";
+import { landingContent } from "./data/landingContent";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = globalThis.setTimeout(() => {
-      setIsLoading(false)
-    }, 1100)
+      setIsLoading(false);
+    }, 1100);
 
     return () => {
-      globalThis.clearTimeout(timer)
-    }
-  }, [])
+      globalThis.clearTimeout(timer);
+    };
+  }, []);
 
   if (isLoading) {
-    return <LoadingSkeleton />
+    return <LoadingSkeleton />;
   }
 
   return (
@@ -38,15 +38,19 @@ function App() {
         cta={landingContent.hero.primaryAction}
       />
 
-      <main className="relative mx-auto flex w-full max-w-[1180px] flex-col gap-6 px-2 pb-12 pt-0 sm:gap-7 sm:px-3 lg:px-4">
-        <HeroSection hero={landingContent.hero} />
-        <ServicesSection services={landingContent.services} />
-        <AboutSection about={landingContent.about} />
-        <ProcessSection process={landingContent.process} />
-        <ContactSection contact={landingContent.contact} />
+      <main className="relative w-full pb-14 pt-18 sm:pb-16 sm:pt-22 md:pt-0">
+        <div className="mx-auto w-full max-w-355 px-4 sm:px-6 lg:px-8 2xl:max-w-420">
+          <div className="flex flex-col gap-6 sm:gap-7 lg:gap-8">
+            <HeroSection hero={landingContent.hero} />
+            <ServicesSection services={landingContent.services} />
+            <AboutSection about={landingContent.about} />
+            <ProcessSection process={landingContent.process} />
+            <ContactSection contact={landingContent.contact} />
+          </div>
+        </div>
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -14,8 +14,8 @@ type AboutSectionProps = Readonly<{
 
 export function AboutSection({ about }: AboutSectionProps) {
   return (
-    <section id="nosotros" className="section-frame scroll-mt-24 px-3 py-6 sm:px-4 sm:py-7 lg:px-5 lg:py-8">
-      <div className="grid items-center gap-4 lg:grid-cols-[1.05fr_minmax(0,0.95fr)]">
+    <section id="nosotros" className="section-frame scroll-mt-24 px-3 py-7 sm:px-4 sm:py-8 lg:px-5 lg:py-9">
+      <div className="grid items-center gap-5 lg:grid-cols-[1.05fr_minmax(0,0.95fr)]">
         <Reveal from="left" className="relative min-h-96 overflow-hidden rounded-4xl border border-white/10 bg-black/20">
           <img
             src="/section_1.png"
@@ -37,7 +37,7 @@ export function AboutSection({ about }: AboutSectionProps) {
           <Reveal from="bottom" delay={140}>
             <p className="mt-4 max-w-xl text-base leading-7 text-white/72">{about.body}</p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <div className="mt-7 grid gap-4 sm:grid-cols-3">
               {about.stats.map((metric) => (
                 <div
                   className="rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(18,29,45,0.74),rgba(10,18,29,0.54))] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.2)] backdrop-blur-md"

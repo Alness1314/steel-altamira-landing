@@ -16,10 +16,10 @@ type ContactSectionProps = Readonly<{
 
 export function ContactSection({ contact }: ContactSectionProps) {
   return (
-    <section id="contacto" className="section-frame scroll-mt-24 px-3 py-6 sm:px-4 sm:py-7 lg:px-5 lg:py-8">
+    <section id="contacto" className="section-frame scroll-mt-24 px-3 py-7 sm:px-4 sm:py-8 lg:px-5 lg:py-9">
       <SectionHeading title={contact.title} description={contact.description} revealFrom="bottom" />
 
-      <div className="mt-6 grid gap-3 lg:grid-cols-2">
+      <div className="mt-7 grid gap-4 lg:grid-cols-2">
         <Reveal from="left">
           <div className="rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,29,45,0.78),rgba(10,18,29,0.58))] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.25)]">
             <form className="grid gap-4">

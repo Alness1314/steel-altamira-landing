@@ -15,10 +15,10 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   const revealDirections: Array<'left' | 'bottom' | 'right'> = ['left', 'bottom', 'right']
 
   return (
-    <section id="servicios" className="section-frame scroll-mt-24 px-3 py-6 sm:px-4 sm:py-7 lg:px-5 lg:py-8">
+    <section id="servicios" className="section-frame scroll-mt-24 px-3 py-7 sm:px-4 sm:py-8 lg:px-5 lg:py-9">
       <SectionHeading title={services.title} description={services.description} revealFrom="bottom" />
 
-      <div className="mt-6 grid gap-3 lg:grid-cols-3">
+      <div className="mt-7 grid gap-4 lg:grid-cols-3">
         {services.items.map((service, index) => (
           <Reveal key={service.title} from={revealDirections[index] ?? 'bottom'} delay={index * 110}>
             <article className="group relative h-full overflow-hidden rounded-[26px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,29,45,0.78),rgba(10,18,29,0.58))] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1.5 hover:border-sky-400/40 hover:bg-[linear-gradient(180deg,rgba(20,34,52,0.84),rgba(12,21,34,0.66))]">

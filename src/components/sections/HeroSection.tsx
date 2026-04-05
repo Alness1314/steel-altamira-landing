@@ -16,7 +16,7 @@ type HeroSectionProps = Readonly<{
 
 export function HeroSection({ hero }: HeroSectionProps) {
   return (
-    <section id="inicio" className="section-frame mt-20 min-h-[calc(100vh-1rem)] scroll-mt-24 p-0 sm:mt-24">
+    <section id="inicio" className="section-frame mt-2 min-h-[calc(100vh-1rem)] scroll-mt-24 p-0 sm:mt-6 md:mt-20 lg:mt-24">
       <div className="absolute inset-0 bg-[url('/section_1.png')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,11,20,0.96)_0%,rgba(7,16,28,0.82)_42%,rgba(8,17,27,0.52)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_20%,rgba(74,144,226,0.26),transparent_24%)]" />

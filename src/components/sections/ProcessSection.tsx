@@ -14,10 +14,10 @@ export function ProcessSection({ process }: ProcessSectionProps) {
   const revealDirections: Array<'left' | 'bottom' | 'right'> = ['left', 'bottom', 'right']
 
   return (
-    <section className="section-frame px-3 py-6 sm:px-4 sm:py-7 lg:px-5 lg:py-8">
+    <section className="section-frame px-3 py-7 sm:px-4 sm:py-8 lg:px-5 lg:py-9">
       <SectionHeading title={process.title} description={process.description} revealFrom="bottom" />
 
-      <div className="mt-6 grid gap-3 lg:grid-cols-3">
+      <div className="mt-7 grid gap-4 lg:grid-cols-3">
         {process.steps.map((step, index) => (
           <Reveal key={step.title} from={revealDirections[index] ?? 'bottom'} delay={index * 110}>
             <article className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(18,29,45,0.74),rgba(10,18,29,0.54))] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.2)] backdrop-blur-xl">
