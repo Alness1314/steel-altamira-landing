@@ -1,4 +1,5 @@
-import type { ActionLink, Metric } from '../../data/landingContent'
+import sectionOneImage from '../../assets/section_1.webp'
+import type { ActionLink, HeroSpotlight, Metric } from '../../data/landingContent'
 import { ActionButton } from '../ui/ActionButton'
 import { Reveal } from '../ui/Reveal'
 
@@ -11,18 +12,19 @@ type HeroSectionProps = Readonly<{
     secondaryAction: ActionLink
     metrics: Metric[]
     highlights: string[]
+    spotlight: HeroSpotlight
   }
 }>
 
 export function HeroSection({ hero }: HeroSectionProps) {
   return (
     <section id="inicio" className="section-frame mt-2 min-h-[calc(100vh-1rem)] scroll-mt-24 p-0 sm:mt-6 md:mt-20 lg:mt-24">
-      <div className="absolute inset-0 bg-[url('/section_1.png')] bg-cover bg-center" />
+      <div className="absolute inset-0">
+        <img src={sectionOneImage} alt="Infraestructura industrial de Altamira Steel" className="h-full w-full object-cover object-center" />
+      </div>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,11,20,0.96)_0%,rgba(7,16,28,0.82)_42%,rgba(8,17,27,0.52)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_20%,rgba(74,144,226,0.26),transparent_24%)]" />
       <div className="hero-grid-overlay absolute inset-0 opacity-20" />
-      <div className="absolute right-[8%] top-24 hidden h-36 w-36 rounded-full border border-white/12 bg-white/6 backdrop-blur-xl lg:block lg:animate-drift" />
-      <div className="absolute right-[10%] top-34 hidden h-36 w-36 rounded-full bg-[radial-gradient(circle,rgba(121,183,255,0.42),transparent_68%)] lg:block" />
 
       <div className="relative grid min-h-[calc(100vh-1rem)] items-end gap-6 px-3 py-12 sm:px-4 sm:py-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(260px,0.85fr)] lg:px-5 lg:py-16">
         <Reveal from="left" className="max-w-3xl self-center">
@@ -56,25 +58,35 @@ export function HeroSection({ hero }: HeroSectionProps) {
         </Reveal>
 
         <Reveal from="right" className="grid gap-3 self-end lg:justify-self-end" delay={150}>
-          <div className="animate-float rounded-[28px] border border-sky-200/12 bg-[linear-gradient(180deg,rgba(12,24,38,0.78),rgba(8,18,30,0.58))] p-4 shadow-[0_18px_45px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-sky-100/50">Capacidad</p>
-            <p className="mt-3 font-display text-4xl font-extrabold text-white">Fabricacion escalable</p>
-            <p className="mt-2 max-w-xs text-sm leading-6 text-white/68">
-              Procesos pensados para obra industrial, manufactura y suministro continuo.
-            </p>
+          <div className="animate-float relative overflow-hidden rounded-[28px] border border-sky-200/12 shadow-[0_18px_45px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+            <img
+              src={sectionOneImage}
+              alt="Detalle industrial"
+              className="absolute inset-0 h-full w-full object-cover object-center opacity-24"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,20,31,0.58),rgba(8,18,30,0.9))]" />
+            <div className="relative p-4">
+              <p className="text-sm uppercase tracking-[0.3em] text-sky-100/50">{hero.spotlight.eyebrow}</p>
+              <p className="mt-3 font-display text-4xl font-extrabold text-white">{hero.spotlight.title}</p>
+              <p className="mt-2 max-w-xs text-sm leading-6 text-white/68">
+              {hero.spotlight.description}
+              </p>
+            </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-            {hero.metrics.map((metric) => (
-              <div
-                key={metric.label}
-                className="rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(18,29,45,0.72),rgba(10,18,29,0.52))] p-4 shadow-[0_18px_45px_rgba(0,0,0,0.24)] backdrop-blur-xl transition duration-500 hover:-translate-y-1.5 hover:border-sky-400/35"
-              >
-                <span className="block font-display text-3xl font-extrabold text-white">{metric.value}</span>
-                <span className="mt-2 block text-sm font-medium text-white/65">{metric.label}</span>
-              </div>
-            ))}
-          </div>
+          {hero.metrics.length > 0 ? (
+            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              {hero.metrics.map((metric) => (
+                <div
+                  key={metric.label}
+                  className="rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(18,29,45,0.72),rgba(10,18,29,0.52))] p-4 shadow-[0_18px_45px_rgba(0,0,0,0.24)] backdrop-blur-xl transition duration-500 hover:-translate-y-1.5 hover:border-sky-400/35"
+                >
+                  <span className="block font-display text-3xl font-extrabold text-white">{metric.value}</span>
+                  <span className="mt-2 block text-sm font-medium text-white/65">{metric.label}</span>
+                </div>
+              ))}
+            </div>
+          ) : null}
         </Reveal>
       </div>
     </section>

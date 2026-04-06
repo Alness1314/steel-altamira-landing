@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import logoAltamiraSteel from '../../assets/logo_altamira_steel.svg'
 import type { ActionLink, NavItem } from '../../data/landingContent'
 import { ActionButton } from '../ui/ActionButton'
 
@@ -45,12 +46,11 @@ export function SiteHeader({ brand, navigation, cta }: SiteHeaderProps) {
       >
         <div className="flex items-center justify-between gap-3">
           <a className="group flex items-center gap-3" href="#inicio" aria-label={`${brand.name} ${brand.tag}`}>
-            <span className="relative h-12 w-12 overflow-hidden rounded-2xl bg-linear-to-br from-sky-200 to-blue-400 shadow-[0_10px_30px_rgba(74,144,226,0.24)]">
-              <span className="absolute inset-1.75 rounded-xl bg-linear-to-br from-slate-950 via-slate-900 to-slate-700" />
-              <span className="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,transparent_38%,rgba(74,144,226,0.62)_100%)]" />
-              <span className="absolute left-1/2 top-[22%] h-[52%] w-[18%] -translate-x-1/2 skew-x-[-14deg] bg-white/92" />
-              <span className="absolute left-[28%] top-[52%] h-[14%] w-[48%] -translate-y-1/2 skew-x-20 bg-white/92" />
-            </span>
+            <img
+              src={logoAltamiraSteel}
+              alt={`${brand.name} ${brand.tag}`}
+              className="h-12 w-auto object-contain drop-shadow-[0_10px_30px_rgba(74,144,226,0.24)] sm:h-14"
+            />
 
             <span className="flex flex-col leading-none">
               <strong className="font-display text-xl font-extrabold uppercase tracking-[0.03em] text-white transition-transform duration-300 group-hover:translate-x-0.5">

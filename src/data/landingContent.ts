@@ -14,6 +14,12 @@ export type Metric = {
   label: string
 }
 
+export type HeroSpotlight = {
+  eyebrow: string
+  title: string
+  description: string
+}
+
 export type Service = {
   title: string
   description: string
@@ -23,7 +29,7 @@ export type Service = {
 export type ContactDetail = {
   title: string
   value: string
-  href: string
+  href?: string
   icon: 'mail' | 'phone' | 'location'
 }
 
@@ -34,7 +40,7 @@ export type ProcessStep = {
 
 export type SocialLink = {
   label: string
-  href: string
+  href?: string
   icon: 'facebook' | 'instagram' | 'linkedin'
 }
 
@@ -49,11 +55,12 @@ export const landingContent = {
     { label: 'Contacto', href: '#contacto' },
   ] satisfies NavItem[],
   hero: {
-    eyebrow: 'Ingenieria y suministro en acero',
-    title: 'Soluciones industriales en acero para proyectos exigentes',
-    description: 'Altamira Steel integra fabricacion, corte y abastecimiento especializado para operaciones que requieren precision, continuidad y respuesta tecnica confiable.',
+    eyebrow: 'Soluciones integrales en construccion, comercializacion y servicios industriales',
+    title: 'Altamira Steel',
+    description:
+      'Somos un grupo de especialistas de alto nivel dedicados a ofrecer soluciones integrales en construccion, comercializacion y servicios industriales. Transformamos la experiencia de nuestros expertos en resultados de precision, con seguridad, calidad tecnica y eficiencia operativa en cada proyecto.',
     primaryAction: {
-      label: 'Solicitar cotizacion',
+      label: 'Contactar a operaciones',
       href: '#contacto',
       variant: 'primary',
     } satisfies ActionLink,
@@ -63,90 +70,113 @@ export const landingContent = {
       variant: 'secondary',
     } satisfies ActionLink,
     metrics: [
-      { value: '20+', label: 'anos de experiencia' },
-      { value: '350+', label: 'proyectos entregados' },
-      { value: '24/7', label: 'respuesta comercial' },
+      { value: 'Calidad', label: 'cumplimiento tecnico y legal en cada entrega' },
+      { value: 'Cero', label: 'accidentes como estandar de seguridad' },
+      { value: 'Nacional', label: 'vision de liderazgo y confianza en el sector' },
     ] satisfies Metric[],
-    highlights: ['Ejecucion especializada', 'Calidad trazable', 'Cobertura industrial'],
+    highlights: ['Construccion', 'Comercializacion', 'Servicios industriales'],
+    spotlight: {
+      eyebrow: 'Aliado estrategico',
+      title: 'Precision operativa',
+      description: 'Consolidamos experiencia tecnica, seguridad y eficiencia para responder con precision en cada proyecto.',
+    } satisfies HeroSpotlight,
   },
   services: {
-    title: 'Nuestros Servicios',
-    description: 'Capacidad tecnica y operativa para atender fabricacion estructural, procesos de corte y abastecimiento continuo de acero para industria y construccion.',
+    title: 'Servicios',
+    description: 'Obra mecanica, herreria y soldadura para proyectos industriales con ejecucion tecnica y control de calidad.',
     items: [
       {
-        title: 'Fabricacion de Estructuras',
-        description: 'Construccion y montaje de estructuras metalicas con enfoque en resistencia, tolerancias y seguridad operativa.',
+        title: 'Obra Mecanica',
+        description:
+          'Fabricacion de plataformas, escaleras marinas, pasos de gato, estructuras y soportes. Incluye fabricacion y montaje de ductos de acero al carbon e inoxidable, asi como maniobras y montajes de equipos, tanques, gruas viajeras, subestaciones, tuberias y ductos.',
         icon: 'structure',
       },
       {
-        title: 'Corte y Soldadura',
-        description: 'Corte laser, oxicorte y soldadura especializada para piezas, ensambles y componentes industriales.',
+        title: 'Herreria',
+        description: 'Fabricacion de puertas, ventanas, portones, escaleras y otras soluciones metalicas segun las necesidades del proyecto.',
         icon: 'welding',
       },
       {
-        title: 'Distribucion de Acero',
-        description: 'Suministro confiable de placas, perfiles y materiales de acero con tiempos de entrega coordinados.',
+        title: 'Soldadura',
+        description:
+          'Trabajos de soldadura en tuberia, soporteria y accesorios, con inspeccion y pruebas no destructivas para el aseguramiento de la calidad.',
         icon: 'distribution',
       },
     ] satisfies Service[],
   },
   about: {
-    title: 'Sobre Nosotros',
-    description: 'Mas de 20 anos impulsando proyectos de acero con una mezcla de experiencia tecnica, control de calidad y acompanamiento comercial cercano.',
-    body: 'Trabajamos con procesos medibles, equipos especializados y una cadena de suministro pensada para responder con rapidez a requerimientos industriales. Nuestro objetivo es que cada entrega llegue lista para integrarse a tu operacion sin friccion.',
-    highlight: 'Cobertura nacional para proyectos metalmecanicos, estructurales y de manufactura especializada.',
+    title: 'Nosotros',
+    description:
+      'Altamira Steel transforma la experiencia de especialistas de alto nivel en resultados de precision para construccion, comercializacion y servicios industriales.',
+    body:
+      'Nos consolidamos como el aliado estrategico que garantiza seguridad, calidad tecnica y eficiencia operativa en cada proyecto. Nuestro enfoque combina ejecucion especializada, cumplimiento tecnico y una operacion responsable con las personas, el entorno y los objetivos de cada cliente.',
+    highlight: 'Seguridad, calidad tecnica y eficiencia operativa en cada proyecto.',
+    badgeValue: 'Alto nivel',
+    badgeLabel: 'de especializacion',
     stats: [
-      { value: '98%', label: 'entregas a tiempo' },
-      { value: '120+', label: 'clientes industriales' },
-      { value: '15k', label: 'toneladas gestionadas' },
+      { value: '3', label: 'lineas principales de servicio' },
+      { value: 'Cero', label: 'accidentes como prioridad operativa' },
+      { value: 'Nacional', label: 'objetivo de liderazgo y confianza' },
     ] satisfies Metric[],
   },
   process: {
-    title: 'Como trabajamos',
-    description: 'Un flujo corto, tecnico y claro para convertir requerimientos industriales en entregas listas para operar.',
+    title: 'Politicas, objetivo y direccion',
+    description:
+      'La operacion de Altamira Steel se sustenta en calidad, seguridad, sostenibilidad y una vision clara de liderazgo nacional.',
     steps: [
       {
-        title: 'Levantamiento tecnico',
-        description: 'Revisamos especificaciones, volumen, tolerancias y condiciones de entrega para definir el alcance real del proyecto.',
+        title: 'Calidad',
+        description:
+          'Garantizamos la entrega de servicios y productos que superan las expectativas del cliente y cumplen rigurosamente con todas las especificaciones tecnicas y requerimientos legales aplicables.',
       },
       {
-        title: 'Produccion y control',
-        description: 'Ejecutamos fabricacion, corte y soldadura con seguimiento de tiempos, calidad y coordinacion con tu operacion.',
+        title: 'Seguridad y Medio Ambiente',
+        description:
+          'Nuestra prioridad absoluta es la integridad de las personas y del entorno. Trabajamos bajo el estandar de cero accidentes con gestion proactiva de riesgos, capacitacion continua y responsabilidad ambiental en cada proyecto.',
       },
       {
-        title: 'Entrega y continuidad',
-        description: 'Programamos despacho y suministro para que el material llegue cuando tu frente de trabajo lo necesita.',
+        title: 'Objetivo',
+        description:
+          'Consolidar a Altamira Steel como el lider y referente de confianza en el sector de la construccion y mantenimiento a nivel nacional, mediante excelencia operativa, innovacion tecnologica y un modelo de negocio sostenible.',
+      },
+      {
+        title: 'Mision',
+        description:
+          'Proveer soluciones integrales de infraestructura, construccion y servicios industriales que impulsen el desarrollo de nuestros clientes, fundamentadas en excelencia tecnica, seguridad operativa y compromiso social y ambiental.',
+      },
+      {
+        title: 'Vision',
+        description:
+          'Ser reconocida como el referente nacional en soluciones integrales de acero e infraestructura industrial, distinguiendonos por innovacion, excelencia operativa y un modelo de negocio sostenible que redefina los estandares del sector.',
       },
     ] satisfies ProcessStep[],
   },
   contact: {
-    title: 'Contactanos',
-    description: 'Cuentanos el alcance de tu proyecto y preparamos una propuesta ajustada a volumen, tiempos y especificaciones tecnicas.',
+    title: 'Contacto',
+    description: 'Atendemos solicitudes de cotizacion, planeacion de trabajos y seguimiento operativo para proyectos industriales.',
     details: [
       {
         title: 'Correo',
-        value: 'info@aceroindustrial.com',
-        href: 'mailto:info@aceroindustrial.com',
+        value: 'Contacto corporativo para solicitudes y seguimiento comercial',
         icon: 'mail',
       },
       {
         title: 'Telefono',
-        value: '555-123-4567',
-        href: 'tel:+525551234567',
+        value: 'Atencion directa para cotizaciones, planeacion y coordinacion operativa',
         icon: 'phone',
       },
       {
-        title: 'Direccion',
-        value: 'Av. Industria 123, Ciudad, MX',
-        href: 'https://maps.google.com/?q=Av.+Industria+123',
+        title: 'Cobertura',
+        value: 'Soluciones de construccion y mantenimiento con enfoque de atencion a nivel nacional',
         icon: 'location',
       },
     ] satisfies ContactDetail[],
     socials: [
-      { label: 'Facebook', href: 'https://facebook.com', icon: 'facebook' },
-      { label: 'Instagram', href: 'https://instagram.com', icon: 'instagram' },
-      { label: 'LinkedIn', href: 'https://linkedin.com', icon: 'linkedin' },
+      { label: 'Facebook', icon: 'facebook' },
+      { label: 'Instagram', icon: 'instagram' },
+      { label: 'LinkedIn', icon: 'linkedin' },
     ] satisfies SocialLink[],
-    submitLabel: 'Enviar',
+    submitLabel: 'Solicitar contacto',
+    footerNote: 'Escribenos para cotizaciones, planeacion de trabajos y seguimiento operativo de tus proyectos industriales.',
   },
 }

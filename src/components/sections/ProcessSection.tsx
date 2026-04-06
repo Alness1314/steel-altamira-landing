@@ -12,14 +12,28 @@ type ProcessSectionProps = Readonly<{
 
 export function ProcessSection({ process }: ProcessSectionProps) {
   const revealDirections: Array<'left' | 'bottom' | 'right'> = ['left', 'bottom', 'right']
+  const isFiveCardLayout = process.steps.length === 5
+
+  const getStepClassName = (index: number) => {
+    if (!isFiveCardLayout) {
+      return 'lg:col-span-1'
+    }
+
+    return index < 3 ? 'lg:col-span-2' : 'lg:col-span-3'
+  }
 
   return (
     <section className="section-frame px-3 py-7 sm:px-4 sm:py-8 lg:px-5 lg:py-9">
       <SectionHeading title={process.title} description={process.description} revealFrom="bottom" />
 
-      <div className="mt-7 grid gap-4 lg:grid-cols-3">
+      <div className={["mt-7 grid gap-4", isFiveCardLayout ? 'lg:grid-cols-6' : 'lg:grid-cols-3'].join(' ')}>
         {process.steps.map((step, index) => (
-          <Reveal key={step.title} from={revealDirections[index] ?? 'bottom'} delay={index * 110}>
+          <Reveal
+            key={step.title}
+            from={revealDirections[index] ?? 'bottom'}
+            delay={index * 110}
+            className={getStepClassName(index)}
+          >
             <article className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(18,29,45,0.74),rgba(10,18,29,0.54))] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.2)] backdrop-blur-xl">
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-400/16 font-display text-xl font-extrabold text-sky-300">
                 0{index + 1}

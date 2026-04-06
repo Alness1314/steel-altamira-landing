@@ -11,6 +11,7 @@ type ContactSectionProps = Readonly<{
     details: ContactDetail[]
     socials: SocialLink[]
     submitLabel: string
+    footerNote: string
   }
 }>
 
@@ -60,37 +61,49 @@ export function ContactSection({ contact }: ContactSectionProps) {
                   <div>
                     <h3 className="font-display text-2xl font-bold text-white">{item.title}</h3>
                     <p className="mt-1 text-base leading-7 text-white/72">
-                      <a
-                        href={item.href}
-                        target={item.icon === 'location' ? '_blank' : undefined}
-                        rel={item.icon === 'location' ? 'noreferrer' : undefined}
-                        className="transition hover:text-white"
-                      >
-                        {item.value}
-                      </a>
+                      {item.href ? (
+                        <a href={item.href} className="transition hover:text-white">
+                          {item.value}
+                        </a>
+                      ) : (
+                        item.value
+                      )}
                     </p>
                   </div>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8 flex gap-3" aria-label="Redes sociales">
-              {contact.socials.map((item) => (
-                <a
-                  key={item.label}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-black/25 text-white transition duration-300 hover:-translate-y-1 hover:border-sky-400/55 hover:bg-sky-500/15"
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={item.label}
-                >
-                  <Icon name={item.icon} />
-                </a>
-              ))}
-            </div>
+            {contact.socials.length > 0 ? (
+              <div className="mt-8 flex gap-3" aria-label="Redes sociales">
+                {contact.socials.map((item) => (
+                  item.href ? (
+                    <a
+                      key={item.label}
+                      className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-black/25 text-white transition duration-300 hover:-translate-y-1 hover:border-sky-400/55 hover:bg-sky-500/15"
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={item.label}
+                    >
+                      <Icon name={item.icon} />
+                    </a>
+                  ) : (
+                    <span
+                      key={item.label}
+                      className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-black/25 text-white/88"
+                      aria-label={item.label}
+                      title={item.label}
+                    >
+                      <Icon name={item.icon} />
+                    </span>
+                  )
+                ))}
+              </div>
+            ) : null}
 
             <p className="mt-6 max-w-md text-base leading-7 text-white/62">
-              Atendemos cotizaciones, compras programadas y proyectos industriales de distintas escalas.
+              {contact.footerNote}
             </p>
           </div>
         </Reveal>
