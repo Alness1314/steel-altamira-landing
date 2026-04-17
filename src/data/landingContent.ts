@@ -157,17 +157,17 @@ export const landingContent = {
     details: [
       {
         title: 'Correo',
-        value: 'Contacto corporativo para solicitudes y seguimiento comercial',
+        value: 'corporativo@altamirasteel.com',
         icon: 'mail',
       },
       {
         title: 'Telefono',
-        value: 'Atencion directa para cotizaciones, planeacion y coordinacion operativa',
+        value: '+52 833 120 4698',
         icon: 'phone',
       },
       {
         title: 'Cobertura',
-        value: 'Soluciones de construccion y mantenimiento con enfoque de atencion a nivel nacional',
+        value: 'Cobertura regional en el sur de Tamaulipas y norte de Veracruz, con capacidad de expansión a otras zonas',
         icon: 'location',
       },
     ] satisfies ContactDetail[],

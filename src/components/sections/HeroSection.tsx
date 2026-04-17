@@ -18,7 +18,7 @@ type HeroSectionProps = Readonly<{
 
 export function HeroSection({ hero }: HeroSectionProps) {
   return (
-    <section id="inicio" className="section-frame mt-2 min-h-[calc(100vh-1rem)] scroll-mt-24 p-0 sm:mt-6 md:mt-20 lg:mt-24">
+    <section id="inicio" className="section-frame mt-2 min-h-[calc(100vh-1rem)] scroll-mt-24 p-0 sm:mt-6 md:mt-20 lg:mt-35">
       <div className="absolute inset-0">
         <img src={sectionOneImage} alt="Infraestructura industrial de Altamira Steel" className="h-full w-full object-cover object-center" />
       </div>
