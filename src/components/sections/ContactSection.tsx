@@ -102,7 +102,7 @@ export function ContactSection({ contact }: ContactSectionProps) {
               </div>
             ) : null}
 
-            <p className="mt-6 max-w-md text-base leading-7 text-white/62">
+            <p className="mt-6 max-w-md text-2xl leading-7 text-white/62">
               {contact.footerNote}
             </p>
           </div>
