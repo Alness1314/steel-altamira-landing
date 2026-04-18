@@ -177,6 +177,6 @@ export const landingContent = {
       { label: 'LinkedIn', icon: 'linkedin' },
     ] satisfies SocialLink[],
     submitLabel: 'Solicitar contacto',
-    footerNote: 'Contáctanos para cotizaciones, planeación y seguimiento de tus proyectos industriales.',
+    footerNote: 'Escribenos para cotizaciones, planeacion de trabajos y seguimiento operativo de tus proyectos industriales.',
   },
 }
