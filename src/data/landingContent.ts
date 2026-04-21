@@ -142,12 +142,12 @@ export const landingContent = {
       {
         title: 'Mision',
         description:
-          'Proveer soluciones integrales de infraestructura, construccion y servicios industriales que impulsen el desarrollo de nuestros clientes, fundamentadas en excelencia tecnica, seguridad operativa y compromiso social y ambiental.',
+          'Proveer soluciones integrales de Acero en infraestructura, construcción y servicios integrales que impulsen el desarrollo exitoso de nuestros clientes, fundamentadas en la excelencia técnica, calidad en el servicio, seguridad operativa y un magnífico equipo humano comprometido con el bienestar social y la sostenibilidad ambiental.',
       },
       {
         title: 'Vision',
         description:
-          'Ser reconocida como el referente nacional en soluciones integrales de acero e infraestructura industrial, distinguiendonos por innovacion, excelencia operativa y un modelo de negocio sostenible que redefina los estandares del sector.',
+          'Ser reconocida como empresa líder nacional en soluciones integrales de Acero e infraestructura industrial, destacándonos por nuestra capacidad de innovar, excelencia operativa, satisfacción total de nuestros clientes y un modelo de negocios sostenible que redefine los estándares de calidad y seguridad en el séctor.',
       },
     ] satisfies ProcessStep[],
   },
